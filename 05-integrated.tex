@@ -1,0 +1,36 @@
+\documentclass[twocolumn]{article}
+\usepackage{graphicx}
+
+\begin{document}
+This is an example file using plots generated with ggplot2.
+You can build a compiled file \texttt{out/05-integrated.pdf} using \texttt{make}.
+
+Single panel figures:
+\begin{figure}[h]
+\begin{center}
+    \includegraphics{out/q3Direct}
+\end{center}
+\caption{A single panel plot, exported directly.}\label{fig:q3Direct}
+\end{figure}
+\begin{figure}[h]
+\begin{center}
+    \includegraphics{out/q3TikzDevice}
+\end{center}
+\caption{A single panel plot, exported via TikZ.}\label{fig:q3TikzDevice}
+\end{figure}
+
+Multi panel figures:
+\begin{figure}[h]
+\begin{center}
+    \includegraphics{out/multiDirect}
+\end{center}
+\caption{A multi panel plot, exported directly.}\label{fig:multiDirect}
+\end{figure}
+\begin{figure}[h]
+\begin{center}
+    \includegraphics{out/multiTikzDevice}
+\end{center}
+\caption{A multi panel plot, exported via TikZ.}\label{fig:multiTikzDevice}
+\end{figure}
+
+\end{document}
