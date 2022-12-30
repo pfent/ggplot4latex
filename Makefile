@@ -2,19 +2,19 @@
 all: out/05-integrated.pdf
 
 # Build rule using latexmk
-BUILD_TEX := latexmk -pdf -interaction=nonstopmode -outdir=out $<
+BUILD_TEX = latexmk -pdf -interaction=nonstopmode -outdir=out $<
 
 # A list of generated files containing the exported plots
-generated_files := 	out/multiDirect.pdf 		\
-					out/multiTikzDevice.tikz 	\
-					out/q3Direct.pdf 			\
-					out/q3TikzDevice.tikz
+generated_files :=	out/multiDirect.pdf	\
+			out/multiTikzDevice.tikz\
+			out/q3Direct.pdf	\
+			out/q3TikzDevice.tikz
 
 # A list of PDFs that we want to include in the integrated PDF
-all_figures :=	out/multiDirect.pdf 	\
-				out/multiTikzDevice.pdf \
-				out/q3Direct.pdf 		\
-				out/q3TikzDevice.pdf
+all_figures :=	out/multiDirect.pdf	\
+		out/multiTikzDevice.pdf	\
+		out/q3Direct.pdf	\
+		out/q3TikzDevice.pdf
 
 # Build rule for the integrated PDF. Note that it depends on all generated figures as PDFs
 out/05-integrated.pdf: 05-integrated.tex $(all_figures)
@@ -31,3 +31,4 @@ out/q3TikzDevice.pdf: out/q3TikzDevice.tikz
 # Build rule that re-runs your R script if you change something in there
 $(generated_files): 04-exportingPlots.r
 	./04-exportingPlots.r
+
